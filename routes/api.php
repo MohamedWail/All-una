@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ApiAuthenticationController;
 
 
-Route::post('register', [ApiAuthenticationController::class, 'register']);
+Route::post('register-buyer', [ApiAuthenticationController::class, 'registerBuyer']);
+Route::post('register-seller', [ApiAuthenticationController::class, 'registerSeller']);
 Route::post('login', [ApiAuthenticationController::class, 'login']);
 
 

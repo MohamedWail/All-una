@@ -17,10 +17,13 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('first_name')->default('');
             $table->string('last_name')->default('');
+            $table->string('username')->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('phone')->default();
             $table->date('date_of_birth')->nullable();
             $table->boolean('type')->default('0');
+            $table->string('status')->default('pending');
             $table->string('path_of_id')->default('');
             $table->string('firebase_token')->default('');
             $table->rememberToken();
