@@ -25,28 +25,11 @@
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Dashboard</div>
-                            <a class="nav-link" href="{{ route('dashboard') }}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                                Users
-                            </a>
-                            <a class="nav-link" href="{{ route('CategoryHome') }}">
-                                <div class="sb-nav-link-icon"><i class="fab fa-cuttlefish"></i></div>
-                                Categories
-                            </a>
+                            <div class="sb-sidenav-menu-heading">Seller Dashboard</div>
                             <a class="nav-link" href="">
                                 <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
                                 Products
                             </a>
-                            <a class="nav-link" href="">
-                                <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
-                                Contact
-                            </a>
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                About
-                            </a>
-                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

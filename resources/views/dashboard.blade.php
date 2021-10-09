@@ -35,7 +35,7 @@
                     <tr>
                         <td>{{ $user->first_name }} {{$user->last_name}}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ ($user->type == 1) ? 'Buyer' : 'Seller' }}</td>
+                        <td>{{ $user->role }}</td>
                         <td>{{ $user->status }}</td>
                         <td><img style="width: 100%;" src="{{URL::asset($user->path_of_id)}}"></td>
                         <td>

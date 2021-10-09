@@ -16,7 +16,7 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {   
-        $users = User::where('type','!=', 0)->get();
+        $users = User::where('role','!=', 'admin')->get();
         return view('dashboard', compact('users'));
     }
 }

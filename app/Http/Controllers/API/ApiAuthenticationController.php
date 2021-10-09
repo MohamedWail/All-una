@@ -44,7 +44,7 @@ class ApiAuthenticationController extends BaseController
         $data = $request->all();
         $data['password'] = bcrypt($data['password']);
         $data['path_of_id'] = $imageName;
-        $data['type'] = 1; //Type 1 means Buyer, Type 0 means Admin and Type 2 means Seller
+        $data['role'] = 'buyer';
 
 
         $user = User::create($data);
@@ -88,8 +88,7 @@ class ApiAuthenticationController extends BaseController
         $data = $request->all();
         $data['password'] = bcrypt($data['password']);
         $data['path_of_id'] = $imageName;
-        $data['type'] = 2; //Type 1 means Buyer, Type 0 means Admin and Type 2 means Seller
-
+        $data['role'] = 'seller';
 
         $user = User::create($data);
 
