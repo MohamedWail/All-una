@@ -30,7 +30,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Users
                             </a>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{ route('CategoryHome') }}">
                                 <div class="sb-nav-link-icon"><i class="fab fa-cuttlefish"></i></div>
                                 Categories
                             </a>
