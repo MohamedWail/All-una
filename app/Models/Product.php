@@ -16,7 +16,7 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function seller(): BelongsTo
+    public function seller()
     {
         return $this->belongsTo(User::class);
     }
@@ -26,7 +26,7 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function category(): BelongsTo
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
@@ -36,7 +36,7 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function images(): HasMany
+    public function images()
     {
         return $this->hasMany(Image::class);
     }

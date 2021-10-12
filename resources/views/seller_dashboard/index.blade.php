@@ -6,7 +6,7 @@
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Products Table
-        <a  href="" 
+        <a  href="{{ Route('SellerDashboard.create') }}" 
             class="btn btn-success a-btn-slide-text">
             <span><strong>Add Products</strong></span>
         </a>  
@@ -16,7 +16,6 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Category</th>
                     <th>Description</th>
                     <th>Starting Bid</th>
                     <th>Duration</th>
@@ -27,7 +26,6 @@
             <tfoot>
                 <tr>
                   <th>Name</th>
-                  <th>Category</th>
                   <th>Description</th>
                   <th>Starting Bid</th>
                   <th>Duration</th>
@@ -36,31 +34,36 @@
                 </tr>
             </tfoot>
             <tbody>
-              @foreach ($products as $product)
-                <tr>{{ $product->name }}</tr>
-                <tr>{{ $product->category->name }}</tr>
-                <tr>{{ $product->description }}</tr>
-                <tr>{{ $product->start_price }}</tr>
-                <tr>{{ $product->duration }}</tr>
-                <tr>{{ $product->status }}</tr>
-                <tr>
-                  <td>
-                    <form 
-                        class="myform"  
-                        id=""  
-                        method="post"
-                        action=""
-                    >
-                        @csrf
-                        @method('DELETE') 
-                        <button class="btn btn-danger a-btn-slide-text" style="float: none;">
-                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                            <span><strong>Delete</strong></span>
-                        </button>
-                    </form>
-                </td>
-                </tr>
-              @endforeach
+                @foreach ($products as $product)
+                    <tr>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->description }}</td>
+                        <td>{{ $product->start_price }}</td>
+                        <td>{{ $product->duration }}</td>
+                        <td>{{ $product->status }}</td>
+                        <td>
+                            <form 
+                                class="myform"  
+                                id=""  
+                                method="post"
+                                action=""
+                            >
+                                @csrf
+                                @method('DELETE')
+                                <a href="" class="btn btn-success a-btn-slide-text">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    <span><strong>Edit</strong></span>
+                                </a>  
+                                <button class="btn btn-danger a-btn-slide-text" style="float: none;">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    <span><strong>Delete</strong></span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    
+                
+                @endforeach
             </tbody>
             
         </table>

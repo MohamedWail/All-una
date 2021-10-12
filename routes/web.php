@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\UserController;
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\SellerDashboard\SellerDashboardController;
+use App\Http\Controllers\SellerDashboard\SellerProductController;
 
 
 
@@ -14,6 +16,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
     //SellerDashboardController
     Route::get('/SellerDashboard', [SellerDashboardController::class, 'index'])->name('SellerDashboard');
+    //SellerProductController
+    Route::get('/SellerDashboard/create', [SellerProductController::class, 'create'])->name('SellerDashboard.create');
+    Route::post('/SellerDashboard/create', [SellerProductController::class, 'store'])->name('SellerDashboard.store');
     //UserController
     Route::get('/approved/{id}', [UserController::class, 'approved'])->name('approved');
     Route::get('/rejected/{id}', [UserController::class, 'rejected'])->name('rejected');
@@ -25,7 +30,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/category/{id}', [CategoryController::class, 'edit'])->name('CategoryEdit');
     Route::patch('/category/{id}', [CategoryController::class, 'update'])->name('CategoryUpdate');
     Route::delete('/category/{id}/delete', [CategoryController::class, 'delete'])->name('CategoryDelete');
-
+    //ProductController
+    Route::get('/product', [ProductController::class, 'index'])->name('ProductHome');
+    Route::get('/product/approve/{id}', [ProductController::class, 'approved'])->name('ProductApprove');
+    Route::get('/product/reject/{id}', [ProductController::class, 'rejected'])->name('ProductReject');
 });
 
 

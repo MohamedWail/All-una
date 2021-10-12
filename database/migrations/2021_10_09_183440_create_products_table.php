@@ -20,7 +20,9 @@ class CreateProductsTable extends Migration
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('name');
+            $table->string('name_ar');
             $table->string('description');
+            $table->string('description_ar');
             $table->float('start_price');
             $table->string('duration');
             $table->string('status')->default('pending');

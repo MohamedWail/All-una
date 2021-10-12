@@ -34,7 +34,7 @@
                                 <div class="sb-nav-link-icon"><i class="fab fa-cuttlefish"></i></div>
                                 Categories
                             </a>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{ route('ProductHome') }}">
                                 <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
                                 Products
                             </a>

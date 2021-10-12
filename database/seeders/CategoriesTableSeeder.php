@@ -16,7 +16,8 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Electronices',
+            'name' => 'Mobile',
+            'name_ar' => 'موبيل',
             'path_of_image' => 'https://source.unsplash.com/user/c_v_r',
         ]);
     }
