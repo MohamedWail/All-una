@@ -19,6 +19,9 @@ Route::middleware(['auth'])->group(function () {
     //SellerProductController
     Route::get('/SellerDashboard/create', [SellerProductController::class, 'create'])->name('SellerDashboard.create');
     Route::post('/SellerDashboard/create', [SellerProductController::class, 'store'])->name('SellerDashboard.store');
+    Route::get('/SellerDashboard/edit_request/{id}', [SellerProductController::class, 'edit'])->name('SellerDashboard.edit');
+    Route::patch('/SellerDashboard/delete_request/{id}', [SellerProductController::class, 'delete'])->name('SellerDashboard.delete');
+    Route::patch('/SellerDashboard/submit_request/{id}', [SellerProductController::class, 'submitRequest'])->name('SellerDashboard.submit');
     //UserController
     Route::get('/approved/{id}', [UserController::class, 'approved'])->name('approved');
     Route::get('/rejected/{id}', [UserController::class, 'rejected'])->name('rejected');
@@ -34,6 +37,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product', [ProductController::class, 'index'])->name('ProductHome');
     Route::get('/product/approve/{id}', [ProductController::class, 'approved'])->name('ProductApprove');
     Route::get('/product/reject/{id}', [ProductController::class, 'rejected'])->name('ProductReject');
+    Route::get('/product/on_hold', [ProductController::class, 'onhold'])->name('OnHoldProducts');
+    Route::get('/product/{id}', [ProductController::class, 'edit'])->name('ProductEdit');
+    Route::patch('/product/{id}', [ProductController::class, 'update'])->name('ProductUpdate');
+    Route::delete('/product/{id}', [ProductController::class, 'delete'])->name('ProductDelete');
 });
 
 

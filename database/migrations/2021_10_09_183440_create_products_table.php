@@ -26,6 +26,8 @@ class CreateProductsTable extends Migration
             $table->float('start_price');
             $table->string('duration');
             $table->string('status')->default('pending');
+            $table->boolean('on_hold')->default(0);
+            $table->string('request')->nullable();
             $table->timestamps();
         });
     }

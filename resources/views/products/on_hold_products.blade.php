@@ -17,7 +17,8 @@
                     <th>Starting Bid</th>
                     <th>Duration</th>
                     <th>Status</th>
-                    <th>Approve/Reject</th>
+                    <th>Edit/Delete</th>
+                    <th>Request</th>
                 </tr>
             </thead>
             <tfoot>
@@ -28,7 +29,8 @@
                     <th>Starting Bid</th>
                     <th>Duration</th>
                     <th>Status</th>
-                    <th>Approve/Reject</th>
+                    <th>Edit/Delete</th>
+                    <th>Request</th>
                 </tr>
             </tfoot>
             <tbody>
@@ -45,6 +47,26 @@
                                 class="myform"  
                                 id=""  
                                 method="post"
+                                action="{{ route('ProductDelete', $product->id) }}"
+                            >
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('ProductEdit', $product->id) }}" class="btn btn-success a-btn-slide-text">
+                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    <span><strong>Edit</strong></span>
+                                </a>  
+                                <button class="btn btn-danger a-btn-slide-text" style="float: none;">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                    <span><strong>Delete</strong></span>
+                                </button>
+                            </form>
+                        </td>
+                        <td>{{ $product->request }}</td>
+                        {{-- <td>
+                            <form 
+                                class="myform"  
+                                id=""  
+                                method="post"
                                 action=""
                             >
                                 @csrf
@@ -57,7 +79,7 @@
                                     <span><strong>Reject</strong></span>
                                 </a>
                             </form>
-                        </td>
+                        </td> --}}
                     </tr>
                 @endforeach
             </tbody>

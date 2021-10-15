@@ -46,11 +46,11 @@
                                 class="myform"  
                                 id=""  
                                 method="post"
-                                action=""
+                                action="{{ route('SellerDashboard.delete', $product->id) }}"
                             >
                                 @csrf
-                                @method('DELETE')
-                                <a href="" class="btn btn-success a-btn-slide-text">
+                                @method('PATCH')
+                                <a href="{{ route('SellerDashboard.edit', $product->id) }}" class="btn btn-success a-btn-slide-text">
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     <span><strong>Edit</strong></span>
                                 </a>  

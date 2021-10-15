@@ -26,7 +26,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Seller Dashboard</div>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{ Route('SellerDashboard') }}">
                                 <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
                                 Products
                             </a>

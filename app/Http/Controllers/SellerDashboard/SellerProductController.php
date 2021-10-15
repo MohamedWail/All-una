@@ -59,9 +59,34 @@ class SellerProductController extends Controller
         return redirect()->route('SellerDashboard');
 
     }
-        //if approved 
-    //edit product
-        //admin must approve 
+    //edit product request
+    public function edit($id) {
+        $product = Product::find($id);
+
+        return view('seller_dashboard.request', compact('product'));
+
+    }
+    //To submit the request of edit to the admin on hold products tab
+    public function submitRequest(Request $request, $id) {
+        $data = request()->validate([
+            'request' => 'required|string',
+        ]);
+
+
+
+        Product::where('id', $request->id)->update($data);
+
+        return redirect()->route('SellerDashboard');
+        
+    }
     //delete product
-        //can't delete if approved
+    public function delete($id) {
+        $product = Product::find($id)->update([
+            'request' => 'delete request',
+            'on_hold' => 1,
+            'status' => 'On Hold - delete'
+        ]);
+        
+        return redirect()->back();
+    }
 }

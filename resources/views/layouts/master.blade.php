@@ -38,9 +38,9 @@
                                 <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
                                 Products
                             </a>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{ route('OnHoldProducts') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-address-book"></i></div>
-                                Contact
+                                On Hold Products
                             </a>
                             <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
