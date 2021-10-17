@@ -40,4 +40,14 @@ class Product extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    /**
+     * Get all of the bids for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bids()
+    {
+        return $this->hasMany(Bidding::class);
+    }
 }

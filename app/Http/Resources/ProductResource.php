@@ -15,7 +15,7 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
-        $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2) ? '' : 'en' ;
+        $locale = $request->server('HTTP_ACCEPT_LANGUAGE') ;
 
         return [
             'name' => $locale == 'en' ? $this->name : $this->name_ar,

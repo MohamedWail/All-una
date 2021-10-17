@@ -25,6 +25,7 @@ class Localization
         } else 
         {
             $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+
         }
         app()->setLocale($locale);
         return $next($request);

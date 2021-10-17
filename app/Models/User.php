@@ -50,4 +50,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Product::class);
     }
+
+    /**
+     * Get all of the bids for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bids()
+    {
+        return $this->hasMany(Bidding::class);
+    }
 }

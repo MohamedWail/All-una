@@ -17,8 +17,7 @@ class CategoryResource extends JsonResource
      */
     public function toArray($request)
     {
-        $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2) ? '' : 'en' ;
-
+        $locale = $request->server('HTTP_ACCEPT_LANGUAGE');
         return [
             'name'=> $locale == 'en' ? $this->name : $this->name_ar,
             'path_of_image'=>URL::to('/').$this->path_of_image,
